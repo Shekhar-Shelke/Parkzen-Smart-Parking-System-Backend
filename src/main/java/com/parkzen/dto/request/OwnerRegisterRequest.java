@@ -32,4 +32,13 @@ public class OwnerRegisterRequest {
     @NotBlank(message = "Password is required")
     @Size(min = 6, message = "Password must be at least 6 characters")
     private String password;
+
+    // Optional — sent from registration form.
+    // Backend applies defaults if not provided:
+    //   pricePerHour         → 50.0
+    //   chargingAvailable    → false
+    //   chargingPricePerHour → 0.0
+    private Double  pricePerHour;
+    private Boolean chargingAvailable;
+    private Double  chargingPricePerHour;
 }
